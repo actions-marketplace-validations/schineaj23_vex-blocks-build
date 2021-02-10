@@ -16,10 +16,17 @@ mkdir ~/sdk
 mv sdk_temp/VEXcode\ Pro\ V5.app/Contents/Resources/sdk/* ~/sdk
 rm -rf _vex*_ _vex*_.dmg sdk_temp/ Payload~
 
+# Download dummy project to build
+fileid="1TAe2Ywms1aM5L0wOyTt-hR3PHUNJlYne"
+filename="project.zip"
+curl -c ./cookie -s -L "https://drive.google.com/uc?export=download&id=${fileid}" > /dev/null
+curl -Lb ./cookie "https://drive.google.com/uc?export=download&confirm=`awk '/download/ {print $NF}' ./cookie`&id=${fileid}" -o ${filename}
+
 # Create c++ file from v5blocks
 # credit to @pbchase
 echo "Creating c++ file from v5blocks file"
 cat $1 | jq -r '. | .cpp' | perl -pe "s/\\\n/\n/g;" > main.cpp
+mv main.cpp src/main.cpp
 
 echo "Building project..."
-make main.cpp
+make src/main.cpp
