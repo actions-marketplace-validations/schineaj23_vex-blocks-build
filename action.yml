@@ -1,0 +1,15 @@
+name: 'VEX V5/Cortex Build'
+description: 'Build a VEX C++ Pro V5/Cortex project. Fork of schineaj23/vex-build'
+branding:
+  icon: 'terminal'  
+  color: 'gray-dark'
+inputs:
+  path:
+    description: 'Path to makefile'
+    required: false
+    default: '.'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.path }}
