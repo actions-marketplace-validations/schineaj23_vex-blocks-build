@@ -1,16 +1,16 @@
 # Vex Build
-Build a VEX C++ Pros V5/Cortex project in Github Actions! Fork of schineaj23/vex-build
+Build a VEX C++ Pros V5/Cortex project in Github Actions! Fork of AritroSaha10/vex-build
 
 ## Inputs
 
 ### `path`
-The path to the project makefile. Default `.`.
+**Required** The path AND filename of project Default `MyProject.v5blocks`.
 
 ## Example usage
 ```
 uses: AritroSaha10/vex-build@v1.1
 with:
-  path: projects/mainproject/
+  path: projects/mainproject/MyProject.v5blocks
 ```
 
 

@@ -9,6 +9,7 @@ RUN apt-get install clang -y
 # Install 7z & cURL
 RUN apt-get install p7zip-full -y
 RUN apt-get install curl -y
+RUN apt-get install jq -y
 
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh

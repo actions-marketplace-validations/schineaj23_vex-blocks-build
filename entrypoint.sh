@@ -16,5 +16,10 @@ mkdir ~/sdk
 mv sdk_temp/VEXcode\ Pro\ V5.app/Contents/Resources/sdk/* ~/sdk
 rm -rf _vex*_ _vex*_.dmg sdk_temp/ Payload~
 
+# Create c++ file from v5blocks
+# credit to @pbchase
+echo "Creating c++ file from v5blocks file"
+cat $1 | jq -r '. | .cpp' | perl -pe "s/\\\n/\n/g;" > main.cpp
+
 echo "Building project..."
-make --directory=$1
+make main.cpp

@@ -1,15 +1,15 @@
-name: 'VEX V5/Cortex Build'
-description: 'Build a VEX C++ Pro V5/Cortex project. Fork of schineaj23/vex-build'
+name: "VEX V5 Blocks Build"
+description: "Build VEX V5 Blocks project."
 branding:
-  icon: 'terminal'  
-  color: 'gray-dark'
+  icon: "terminal"
+  color: "gray-dark"
 inputs:
   path:
-    description: 'Path to makefile'
-    required: false
-    default: '.'
+    description: "Path and filename to file"
+    required: true
+    default: "MyProject.v5blocks"
 runs:
-  using: 'docker'
-  image: 'Dockerfile'
+  using: "docker"
+  image: "Dockerfile"
   args:
     - ${{ inputs.path }}
