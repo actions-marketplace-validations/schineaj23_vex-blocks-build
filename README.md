@@ -8,7 +8,7 @@ Build a VEX C++ Pros V5/Cortex project in Github Actions! Fork of AritroSaha10/v
 
 ## Example usage
 ```
-uses: AritroSaha10/vex-build@v1.1
+uses: schineaj23/vex-blocks-build@v1.0
 with:
   path: projects/mainproject/MyProject.v5blocks
 ```
